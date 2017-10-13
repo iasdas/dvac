@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+ul {
+			list-style-type:none;
+			margin:0;
+			padding:0;
+			overflow:hidden;
+			background-color:#add6ff;
+		}
+
+		li {
+			float:left;
+		}
+
+		li a {
+			display:block;
+			color:black;
+			text-align:center;
+			padding:14px 16px;
+			text-decoration:none;
+			font-family:Roboto;
+			font-size:18px;
+		}
+		
+		li {
+			float:left;
+			border-right:2px solid #9ebeff;
+		}
+		
+		li a.active {
+			background-color:#9ebeff;
+			color:#565656;
+		}
+	
+		li a:hover:not(.active) {
+			background-color:#9ebeff;
+			color:#565656;
+		}
+
+		body {
+			background-color:#3c3d3f;
+		}
+		#main {
+			margin-left:auto;
+			margin-right:auto;
+			margin-top:50px;
+			margin-bottom:50px;
+			width:75%;
+			height:600px;
+			background-color:white;
+			}
+body {
+	background-image: url("louvre.jpg");
+}
+h1 {
+	color : white;
+	font-size: 30px;
+	font-family:Roboto;
+}
+p {
+	color : black;
+	font-size:15px;
+	font-family:Roboto;
+	background-color: white;
+	margin-right: 750px;
+}
+</style>
+
+</head>
+<body>
+<ul>
+  <li><a href="dreamvac.html">Home</a></li>
+  <li><a href="eiffel.html">Eiffel Tower</a></li>
+  <li><a href="versailles.html">Versailles</a></li>
+  <li><a class="active"href="louvre.html">Louvre</a></li>
+  <li><a href="catacombs.html">Catacombs</a></li>
+  <li><a href="sources.html">Sources</a></li>
+</ul>
+
+<h1>Paris Landmarks: Louvre Museum</h1>
+
+<p>The Louvre Museum is the worlds largest art museum housing many famous paintings and sculptures. It occupies 782,910 square feet with over 38,000 works of art from prehistory.</p>
+
+<div id="googleMap" style="width:800px;height:600px;"></div>
+
+	<script>
+		
+function myMap() {
+var mapCenter = new google.maps.LatLng(48.8606,2.3376);
+var mapProp= {
+    center:mapCenter,
+    zoom:19,
+    mapTypeId:google.maps.MapTypeId.HYBRID
+};
+var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+
+var eiffel=new google.maps.LatLng(48.8584,2.2945)
+//Eiffel Tower
+var versailles=new google.maps.LatLng(48.8049,2.1204)
+//Versailles
+var louvre=new google.maps.LatLng(48.8606,2.3376)
+//The Louvre
+var catacombs=new google.maps.LatLng(48.8338,2.3324)
+//Catacombs of Paris
+}
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDJbzJjVcenblKJbB1N2Zi3aoeC2DQJtTU&callback=myMap"></script>
+
+</body>
+</html>

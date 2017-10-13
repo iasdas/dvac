@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+ul {
+			list-style-type:none;
+			margin:0;
+			padding:0;
+			overflow:hidden;
+			background-color:#add6ff;
+		}
+
+		li {
+			float:left;
+		}
+
+		li a {
+			display:block;
+			color:black;
+			text-align:center;
+			padding:14px 16px;
+			text-decoration:none;
+			font-family:Roboto;
+			font-size:18px;
+		}
+		
+		li {
+			float:left;
+			border-right:2px solid #9ebeff;
+		}
+		
+		li a.active {
+			background-color:#9ebeff;
+			color:#565656;
+		}
+	
+		li a:hover:not(.active) {
+			background-color:#9ebeff;
+			color:#565656;
+		}
+
+		body {
+			background-color:#3c3d3f;
+		}
+		#main {
+			margin-left:auto;
+			margin-right:auto;
+			margin-top:50px;
+			margin-bottom:50px;
+			width:75%;
+			height:600px;
+			background-color:white;
+			}
+body {
+	background-image: url("paris.jpg");
+}
+h1 {
+	color : black;
+	font-size: 30px;
+	font-family:Roboto;
+}
+p {
+	color : black;
+	font-size:20px;
+	font-family:Roboto;
+	background-color: white;
+	margin-right: 750px;
+}
+</style>
+
+</head>
+<body>
+<ul>
+  <li><a class="active"href="dreamvac.html">Home</a></li>
+  <li><a href="eiffel.html">Eiffel Tower</a></li>
+  <li><a href="versailles.html">Versailles</a></li>
+  <li><a href="louvre.html">Louvre</a></li>
+  <li><a href="catacombs.html">Catacombs</a></li>
+  <li><a href="sources.html">Sources</a></li>
+</ul>
+
+<h1>Dream Vacation: Paris</h1>
+
+<p>Paris is the Capital of France which serves as a center for art, fashion, and culture. Millions of people every year come to Paris for the many landmarks that reside in the area.</p>
+
+<div id="googleMap" style="width:550px;height:700px;"></div>
+
+	<script>
+		
+function myMap() {
+var mapCenter = new google.maps.LatLng(48.8566,2.3522);
+var mapProp= {
+    center:mapCenter,
+    zoom:7,
+    mapTypeId:google.maps.MapTypeId.HYBRID
+};
+var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+var paris=new google.maps.LatLng(48.8566,2.3522)
+var eiffel=new google.maps.LatLng(48.8584,2.2945)
+//Eiffel Tower
+var versailles=new google.maps.LatLng(48.8049,2.1204)
+//Versailles
+var louvre=new google.maps.LatLng(48.8606,2.3376)
+//The Louvre
+var catacombs=new google.maps.LatLng(48.8338,2.3324)
+//Catacombs of Paris
+
+
+var parisMarker = new google.maps.Marker({
+position: paris,
+icon: "marker.png",
+})
+parisMarker.setMap(map);
+
+
+}
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDJbzJjVcenblKJbB1N2Zi3aoeC2DQJtTU&callback=myMap"></script>
+
+</body>
+</html>
